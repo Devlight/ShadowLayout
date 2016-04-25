@@ -43,13 +43,6 @@ public class ShadowLayout extends FrameLayout {
     private final static float MAX_ANGLE = 360.0f;
     private final static float MIN_RADIUS = 0.1f;
     private final static float MIN_ANGLE = 0.0f;
-
-    // Shadow bitmap and canvas
-    private Bitmap mBitmap;
-    private Canvas mCanvas = new Canvas();
-
-    // View bounds
-    private Rect mBounds = new Rect();
     // Shadow paint
     private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG) {
         {
@@ -57,7 +50,11 @@ public class ShadowLayout extends FrameLayout {
             setFilterBitmap(true);
         }
     };
-
+    // Shadow bitmap and canvas
+    private Bitmap mBitmap;
+    private Canvas mCanvas = new Canvas();
+    // View bounds
+    private Rect mBounds = new Rect();
     // Check whether need to redraw shadow
     private boolean mInvalidateShadow = true;
 
