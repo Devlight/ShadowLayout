@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.gigamole.library.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#92DCE5"
+        app:sl_shadow_angle="45"
+        app:sl_shadow_distance="6dp"
+        app:sl_shadow_radius="8dp"
+        app:sl_shadowed="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/txt_temp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_fill"
+                android:rotation="45"/>
+
+            <TextView
+                android:id="@+id/txt_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-35dp"
+                android:background="@drawable/bg_fill"
+                android:gravity="center"
+                android:padding="23dp"
+                android:text="@string/app_name"
+                android:textColor="#000"
+                android:textSize="30sp"/>
+
+        </RelativeLayout>
+
+    </com.gigamole.library.ShadowLayout>
+
+    <com.gigamole.library.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#D64933"
+        app:sl_shadow_angle="270"
+        app:sl_shadow_color="#000"
+        app:sl_shadow_distance="2dp"
+        app:sl_shadow_radius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_stroke"
+                android:padding="12dp"
+                android:src="@drawable/ic_second"
+                android:tint="#EEE5E9"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="*ShadowLayout*"
+                android:textColor="#EEE5E9"
+                android:textSize="40sp"/>
+        </LinearLayout>
+
+    </com.gigamole.library.ShadowLayout>
+
+    <com.gigamole.library.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#7C7C7C"
+        app:sl_shadow_angle="225"
+        app:sl_shadow_color="#000"
+        app:sl_shadow_distance="4dp"
+        app:sl_shadow_radius="5dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/bg_fill"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="@string/app_name"
+                android:textColor="#D64933"
+                android:textSize="30sp"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_fifth"
+                android:tint="#92DCE5"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_first"
+                android:tint="#92DCE5"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_third"
+                android:tint="#92DCE5"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_eighth"
+                android:tint="#92DCE5"/>
+
+        </FrameLayout>
+    </com.gigamole.library.ShadowLayout>
+
+    <com.gigamole.library.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000"
+        app:sl_shadow_angle="90"
+        app:sl_shadow_color="#92DCE5"
+        app:sl_shadow_distance="4dp"
+        app:sl_shadow_radius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_stroke"
+                android:padding="20dp"
+                android:src="@drawable/ic_fourth"
+                android:tint="#EEE5E9"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:text="SL"
+                android:textStyle="bold"
+                android:textColor="#EEE5E9"
+                android:textSize="40sp"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_stroke"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:padding="20dp"
+                android:src="@drawable/ic_seventh"
+                android:tint="#EEE5E9"/>
+
+        </LinearLayout>
+
+    </com.gigamole.library.ShadowLayout>
+
+</LinearLayout>
