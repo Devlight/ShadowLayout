@@ -126,4 +126,4 @@ Author
 
 Made in [DevLight Mobile Agency](https://github.com/DevLight-Mobile-Agency)
 
-Created by [Basil Miller](https://github.com/GIGAMOLE) - [@gigamole](mailto:http://gigamole53@gmail.com)
+Created by [Basil Miller](https://github.com/GIGAMOLE) - [@gigamole](mailto:gigamole53@gmail.com)
