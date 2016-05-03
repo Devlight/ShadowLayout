@@ -1,4 +1,6 @@
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShadowLayout-blue.svg?style=flat-square)](http://android-arsenal.com/details/1/3524)
+
 ShadowLayout
 ===================
 
