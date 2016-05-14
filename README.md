@@ -32,7 +32,7 @@ dependencies {
 Or Gradle Maven Central:
 
 ```groovy
-compile 'com.github.devlight.shadowlayout:library:1.0.0'
+compile 'com.github.devlight.shadowlayout:library:1.0.1'
 ```
 
 Or Maven:
@@ -41,7 +41,7 @@ Or Maven:
 <dependency>
     <groupId>com.github.devlight.shadowlayout</groupId>
     <artifactId>library</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <type>aar</type>
 </dependency>
 ```
@@ -49,7 +49,7 @@ Or Maven:
 Android SDK Version
 =========
 
-ShadowLayout requires a minimum sdk version of 11. 
+ShadowLayout requires a minimum SDK version of 11. 
 
 Sample
 ========

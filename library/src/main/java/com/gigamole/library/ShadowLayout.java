@@ -23,6 +23,7 @@ import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.support.annotation.FloatRange;
 import android.util.AttributeSet;
@@ -109,6 +110,16 @@ public class ShadowLayout extends FrameLayout {
             );
         } finally {
             typedArray.recycle();
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        // Clear shadow bitmap
+        if (mBitmap != null) {
+            mBitmap.recycle();
+            mBitmap = null;
         }
     }
 
@@ -224,17 +235,27 @@ public class ShadowLayout extends FrameLayout {
                     // paint does`t draw shadow, it draw another copy of bitmap
                     super.dispatchDraw(mCanvas);
 
-                    // Draw alpha chanel bitmap of our local canvas
-                    mCanvas.drawBitmap(mBitmap.extractAlpha(), mShadowDx, mShadowDy, mPaint);
+                    // Get the alpha bounds of bitmap
+                    final Bitmap extractedAlpha = mBitmap.extractAlpha();
+                    // Clear past content content to draw shadow
+                    mCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
+
+                    // Draw extracted alpha bounds of our local canvas
+                    mCanvas.drawBitmap(extractedAlpha, mShadowDx, mShadowDy, mPaint);
+
+                    // Recycle and clear extracted alpha
+                    extractedAlpha.recycle();
                 } else {
-                    // Clear shadow bitmap
-                    mBitmap.recycle();
-                    mBitmap = null;
+                    // Create placeholder bitmap when size is zero and wait until new size coming up
+                    mBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.RGB_565);
                 }
             }
 
             // Draw shadow bitmap
-            if (mCanvas != null && mBitmap != null) canvas.drawBitmap(mBitmap, 0.0f, 0.0f, null);
+            if (mCanvas != null) {
+                if (mBitmap != null && !mBitmap.isRecycled())
+                    canvas.drawBitmap(mBitmap, 0.0f, 0.0f, null);
+            }
         }
 
         // Draw child`s
