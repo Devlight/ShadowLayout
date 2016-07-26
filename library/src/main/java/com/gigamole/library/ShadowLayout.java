@@ -252,10 +252,8 @@ public class ShadowLayout extends FrameLayout {
             }
 
             // Draw shadow bitmap
-            if (mCanvas != null) {
-                if (mBitmap != null && !mBitmap.isRecycled())
-                    canvas.drawBitmap(mBitmap, 0.0f, 0.0f, null);
-            }
+            if (mCanvas != null && mBitmap != null && !mBitmap.isRecycled())
+                canvas.drawBitmap(mBitmap, 0.0f, 0.0f, null);
         }
 
         // Draw child`s
