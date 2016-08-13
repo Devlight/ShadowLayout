@@ -35,15 +35,16 @@ import android.widget.FrameLayout;
 public class ShadowLayout extends FrameLayout {
 
     // Default shadow values
-    private final static float DEFAULT_SHADOW_RADIUS = 30.0f;
-    private final static float DEFAULT_SHADOW_DISTANCE = 15.0f;
-    private final static float DEFAULT_SHADOW_ANGLE = 45.0f;
+    private final static float DEFAULT_SHADOW_RADIUS = 30.0F;
+    private final static float DEFAULT_SHADOW_DISTANCE = 15.0F;
+    private final static float DEFAULT_SHADOW_ANGLE = 45.0F;
     private final static int DEFAULT_SHADOW_COLOR = Color.DKGRAY;
 
     // Shadow bounds values
-    private final static float MAX_ANGLE = 360.0f;
-    private final static float MIN_RADIUS = 0.1f;
-    private final static float MIN_ANGLE = 0.0f;
+    private final static int MAX_ALPHA = 255;
+    private final static float MAX_ANGLE = 360.0F;
+    private final static float MIN_RADIUS = 0.1F;
+    private final static float MIN_ANGLE = 0.0F;
     // Shadow paint
     private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG) {
         {
@@ -53,9 +54,9 @@ public class ShadowLayout extends FrameLayout {
     };
     // Shadow bitmap and canvas
     private Bitmap mBitmap;
-    private Canvas mCanvas = new Canvas();
+    private final Canvas mCanvas = new Canvas();
     // View bounds
-    private Rect mBounds = new Rect();
+    private final Rect mBounds = new Rect();
     // Check whether need to redraw shadow
     private boolean mInvalidateShadow = true;
 
@@ -64,6 +65,7 @@ public class ShadowLayout extends FrameLayout {
 
     // Shadow variables
     private int mShadowColor;
+    private int mShadowAlpha;
     private float mShadowRadius;
     private float mShadowDistance;
     private float mShadowAngle;
@@ -170,8 +172,8 @@ public class ShadowLayout extends FrameLayout {
 
     public void setShadowColor(final int shadowColor) {
         mShadowColor = shadowColor;
+        mShadowAlpha = Color.alpha(shadowColor);
 
-        mPaint.setColor(shadowColor);
         resetShadow();
     }
 
@@ -186,13 +188,22 @@ public class ShadowLayout extends FrameLayout {
     // Reset shadow layer
     private void resetShadow() {
         // Detect shadow axis offset
-        mShadowDx = (float) ((mShadowDistance) * Math.cos(mShadowAngle / 180.0f * Math.PI));
-        mShadowDy = (float) ((mShadowDistance) * Math.sin(mShadowAngle / 180.0f * Math.PI));
+        mShadowDx = (float) ((mShadowDistance) * Math.cos(mShadowAngle / 180.0F * Math.PI));
+        mShadowDy = (float) ((mShadowDistance) * Math.sin(mShadowAngle / 180.0F * Math.PI));
 
         // Set padding for shadow bitmap
         final int padding = (int) (mShadowDistance + mShadowRadius);
         setPadding(padding, padding, padding, padding);
         requestLayout();
+    }
+
+    private int adjustShadowAlpha(final boolean adjust) {
+        return Color.argb(
+                adjust ? MAX_ALPHA : mShadowAlpha,
+                Color.red(mShadowColor),
+                Color.green(mShadowColor),
+                Color.blue(mShadowColor)
+        );
     }
 
     @Override
@@ -241,6 +252,7 @@ public class ShadowLayout extends FrameLayout {
                     mCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
 
                     // Draw extracted alpha bounds of our local canvas
+                    mPaint.setColor(adjustShadowAlpha(false));
                     mCanvas.drawBitmap(extractedAlpha, mShadowDx, mShadowDy, mPaint);
 
                     // Recycle and clear extracted alpha
@@ -251,9 +263,11 @@ public class ShadowLayout extends FrameLayout {
                 }
             }
 
+            // Reset alpha to draw child with full alpha
+            mPaint.setColor(adjustShadowAlpha(true));
             // Draw shadow bitmap
             if (mCanvas != null && mBitmap != null && !mBitmap.isRecycled())
-                canvas.drawBitmap(mBitmap, 0.0f, 0.0f, null);
+                canvas.drawBitmap(mBitmap, 0.0F, 0.0F, mPaint);
         }
 
         // Draw child`s

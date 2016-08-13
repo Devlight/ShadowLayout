@@ -37,7 +37,7 @@ dependencies {
 Or Gradle Maven Central:
 
 ```groovy
-compile 'com.github.devlight.shadowlayout:library:1.0.1'
+compile 'com.github.devlight.shadowlayout:library:1.0.2'
 ```
 
 Or Maven:
@@ -46,7 +46,7 @@ Or Maven:
 <dependency>
     <groupId>com.github.devlight.shadowlayout</groupId>
     <artifactId>library</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <type>aar</type>
 </dependency>
 ```
