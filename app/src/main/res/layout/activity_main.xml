@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,192 +10,170 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.gigamole.library.ShadowLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#92DCE5"
-        app:sl_shadow_angle="45"
-        app:sl_shadow_distance="6dp"
-        app:sl_shadow_radius="8dp"
-        app:sl_shadowed="true">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <com.gigamole.library.ShadowLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            app:sl_shadow_angle="45"
+            app:sl_shadow_color="#9e000000"
+            app:sl_shadow_distance="4dp"
+            app:sl_shadow_radius="4dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/txt_temp"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
-                android:background="@drawable/bg_fill"
-                android:rotation="45"/>
-
-            <TextView
-                android:id="@+id/txt_temp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="-35dp"
-                android:background="@drawable/bg_fill"
-                android:gravity="center"
-                android:padding="23dp"
-                android:text="@string/app_name"
-                android:textColor="#000"
-                android:textSize="30sp"/>
-
-        </RelativeLayout>
-
-    </com.gigamole.library.ShadowLayout>
-
-    <com.gigamole.library.ShadowLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#D64933"
-        app:sl_shadow_angle="270"
-        app:sl_shadow_color="#000"
-        app:sl_shadow_distance="2dp"
-        app:sl_shadow_radius="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_stroke"
-                android:padding="12dp"
-                android:src="@drawable/ic_second"
-                android:tint="#EEE5E9"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="*ShadowLayout*"
-                android:textColor="#EEE5E9"
-                android:textSize="40sp"/>
-        </LinearLayout>
-
-    </com.gigamole.library.ShadowLayout>
-
-    <com.gigamole.library.ShadowLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#7C7C7C"
-        app:sl_shadow_angle="225"
-        app:sl_shadow_color="#5b000000"
-        app:sl_shadow_distance="4dp"
-        app:sl_shadow_radius="5dp">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp">
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginBottom="68dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_logo"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_fill"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="@string/app_name"
-                android:textColor="#D64933"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="HOW WE WORK"
+                android:typeface="sans"
+                android:textColor="#414141"
+                android:textSize="18sp"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_fifth"
-                android:tint="#92DCE5"/>
+        </com.gigamole.library.ShadowLayout>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_first"
-                android:tint="#92DCE5"/>
+        <com.gigamole.library.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:sl_shadow_angle="45"
+            app:sl_shadow_color="#4ea3e8"
+            app:sl_shadow_distance="3dp"
+            app:sl_shadow_radius="5dp">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="bottom"
-                android:src="@drawable/ic_third"
-                android:tint="#92DCE5"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="bottom|end"
-                android:src="@drawable/ic_eighth"
-                android:tint="#92DCE5"/>
-
-        </FrameLayout>
-    </com.gigamole.library.ShadowLayout>
-
-    <com.gigamole.library.ShadowLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#000"
-        app:sl_shadow_angle="90"
-        app:sl_shadow_color="#92DCE5"
-        app:sl_shadow_distance="4dp"
-        app:sl_shadow_radius="8dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_stroke"
-                android:padding="20dp"
-                android:src="@drawable/ic_fourth"
-                android:tint="#EEE5E9"/>
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
-                android:gravity="center"
-                android:text="SL"
-                android:textColor="#EEE5E9"
-                android:textSize="40sp"
-                android:textStyle="bold"/>
+                android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
-                android:background="@drawable/bg_stroke"
-                android:padding="20dp"
-                android:src="@drawable/ic_seventh"
-                android:tint="#EEE5E9"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
 
-    </com.gigamole.library.ShadowLayout>
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_strategy"/>
 
-</LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Strategy"
+                            android:typeface="sans"
+                            android:textColor="#3d80b9"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="24dp"
+                        android:layout_height="0dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_design"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Design"
+                            android:typeface="sans"
+                            android:textColor="#3d80b9"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_development"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Development"
+                            android:typeface="sans"
+                            android:textColor="#3d80b9"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="24dp"
+                        android:layout_height="0dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_qa"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="QA"
+                            android:typeface="sans"
+                            android:textColor="#3d80b9"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.gigamole.library.ShadowLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
