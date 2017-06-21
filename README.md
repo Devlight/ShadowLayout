@@ -126,7 +126,7 @@ And XML init:
     
     <!-- Set your child`s-->
     
-</com.gigamole.samples.ShadowLayout>
+</com.gigamole.library.ShadowLayout>
 ```
 
 Getting Help
