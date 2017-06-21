@@ -115,7 +115,7 @@ Other methods check out in sample.
 And XML init:
 
 ```xml
-<com.gigamole.samples.ShadowLayout
+<com.gigamole.library.ShadowLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:sl_shadowed="true"
@@ -126,7 +126,7 @@ And XML init:
     
     <!-- Set your child`s-->
     
-</com.gigamole.samples.ShadowLayout>
+</com.gigamole.library.ShadowLayout>
 ```
 
 Getting Help
