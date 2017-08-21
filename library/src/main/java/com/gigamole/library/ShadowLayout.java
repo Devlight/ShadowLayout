@@ -27,7 +27,6 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.support.annotation.FloatRange;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.FrameLayout;
 
 /**
@@ -212,11 +211,7 @@ public class ShadowLayout extends FrameLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         // Set ShadowLayout bounds
-//        mBounds.set(
-//                0, 0, MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.getSize(heightMeasureSpec)
-//        );
-        mBounds.set(0, 0,
-                getMeasuredWidth(), getMeasuredHeight());
+        mBounds.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 
     @Override
@@ -226,12 +221,9 @@ public class ShadowLayout extends FrameLayout {
         super.requestLayout();
     }
 
-    static int dispatchCount = 0;
-
     @Override
     protected void dispatchDraw(final Canvas canvas) {
         // If is not shadowed, skip
-//        Log.i("######", "dispatch");
         if (mIsShadowed) {
             // If need to redraw shadow
             if (mInvalidateShadow) {
@@ -278,6 +270,5 @@ public class ShadowLayout extends FrameLayout {
 
         // Draw child`s
         super.dispatchDraw(canvas);
-        dispatchCount++;
     }
 }
