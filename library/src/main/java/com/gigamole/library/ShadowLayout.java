@@ -211,9 +211,7 @@ public class ShadowLayout extends FrameLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         // Set ShadowLayout bounds
-        mBounds.set(
-                0, 0, MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.getSize(heightMeasureSpec)
-        );
+        mBounds.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 
     @Override
