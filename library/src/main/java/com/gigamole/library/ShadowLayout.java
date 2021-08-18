@@ -115,16 +115,6 @@ public class ShadowLayout extends FrameLayout {
         }
     }
 
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        // Clear shadow bitmap
-        if (mBitmap != null) {
-            mBitmap.recycle();
-            mBitmap = null;
-        }
-    }
-
     public boolean isShadowed() {
         return mIsShadowed;
     }
